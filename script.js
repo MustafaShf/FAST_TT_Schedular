@@ -562,9 +562,9 @@ function toggleSidebar() {
     var sidebar = document.querySelector('.sidebar');
     if (sidebar.style.left === '0px') {
         sidebar.style.left = '-300px'; // Hide sidebar
-        sidebar.style.display = 'none';
+        // sidebar.style.display = 'none';
     } else {
         sidebar.style.left = '0'; // Show sidebar
-        sidebar.style.display = 'block';
+        // sidebar.style.display = 'block';
     }
 }

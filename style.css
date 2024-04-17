@@ -134,8 +134,8 @@ button:hover {
     }
 
     .sidebar {
-        left: -200px; /* Sidebar starts off-screen on mobile */
-        display: none;
+        left: -300px; /* Sidebar starts off-screen on mobile */
+        /* display: none; */
     }
 
     .container {
