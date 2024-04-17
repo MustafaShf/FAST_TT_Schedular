@@ -1,0 +1,148 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding-top: 50px; /* Ensure there's room for the menu button on small screens */
+}
+
+#sidebar-toggle {
+    display: none; /* Hidden by default, shown only on mobile */
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #f0f4f8;
+    padding: 20px;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    transition: left 0.3s;
+    z-index: 900; /* Ensure sidebar overlays other content */
+}
+
+
+.dropdown {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: white;
+    color: black;
+}
+
+.dropdown-content div {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content div:last-child {
+    border-bottom: none;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 600px;
+    margin-left: 220px; /* Adjust based on the width of the sidebar */
+    transition: margin-left 0.3s;
+    
+}
+
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid #007BFF;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#timetable {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#timetable th, #timetable td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+    color: #333;
+}
+
+#timetable th {
+    background-color: #007BFF;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#timetable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#timetable tr:hover {
+    background-color: #ddd;
+}
+
+#footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    #sidebar-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        left: -200px; /* Sidebar starts off-screen on mobile */
+        display: none;
+    }
+
+    .container {
+        width: 100%; /* Full width on smaller screens */
+        padding: 10px; /* Slightly reduce padding for space efficiency */
+        margin: 0; /* Remove margin to use the full width of the screen */
+        box-shadow: none; /* Optional: reduce shadow effects on small screens */
+    }
+}
+

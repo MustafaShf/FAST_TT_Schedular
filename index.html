@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAST TIMETABLES</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="sidebar-toggle" onclick="toggleSidebar()">Menu</button>
+    <div class="sidebar">
+
+        <b>COURSE CODE</b>
+        <br>
+        <br>
+        <div class="dropdown" onclick="toggleDropdown('semester1')">
+            Semester 1
+            <div class="dropdown-content" id="semester1">
+                <div>CS1004</div>
+                <div>CS1005</div>
+                <div>EE1005</div>
+                <div>MT1008</div>
+                <div>SE1001</div>
+            </div>
+        </div>
+        <div class="dropdown" onclick="toggleDropdown('semester2')">
+            Semester 2
+            <div class="dropdown-content" id="semester2">
+                <div>C1</div>
+                <div>C2</div>
+                <div>C3</div>
+                <div>C4</div>
+                <div>C5</div>
+            </div>
+        </div>
+        <div class="dropdown" onclick="toggleDropdown('semester3')">
+            Semester 3
+            <div class="dropdown-content" id="semester3">
+                <div>C1</div>
+                <div>C2</div>
+                <div>C3</div>
+                <div>C4</div>
+                <div>C5</div>
+            </div>
+        </div>
+        <div class="dropdown" onclick="toggleDropdown('semester4')">
+            Semester 4
+            <div class="dropdown-content" id="semester4">
+                <div>C1</div>
+                <div>C2</div>
+                <div>C3</div>
+                <div>C4</div>
+                <div>C5</div>
+            </div>
+        </div>
+        <div class="dropdown" onclick="toggleDropdown('semester5')">
+            Semester 5
+            <div class="dropdown-content" id="semester5">
+                <div>C1</div>
+                <div>C2</div>
+                <div>C3</div>
+                <div>C4</div>
+                <div>C5</div>
+            </div>
+        </div>
+        <div class="dropdown" onclick="toggleDropdown('semester6')">
+            Semester 6
+            <div class="dropdown-content" id="semester6">
+                <div>C1</div>
+                <div>C2</div>
+                <div>C3</div>
+                <div>C4</div>
+                <div>C5</div>
+            </div>
+        </div>
+        <div class="dropdown" onclick="toggleDropdown('semester7')">
+            Semester 7
+            <div class="dropdown-content" id="semester7">
+                <div>C1</div>
+                <div>C2</div>
+                <div>C3</div>
+                <div>C4</div>
+                <div>C5</div>
+            </div>
+        </div>
+        <div class="dropdown" onclick="toggleDropdown('semester8')">
+            Semester 8
+            <div class="dropdown-content" id="semester8">
+                <div>C1</div>
+                <div>C2</div>
+                <div>C3</div>
+                <div>C4</div>
+                <div>C5</div>
+            </div>
+        </div>
+        <!-- Repeat for other semesters -->
+        <!-- Semesters 2 to 8 similar to the above block -->
+    </div>
+    <div class="container">
+        <input type="text" id="course-input" placeholder="Enter course code...">
+        <button type="button" onclick="addCourse()">Add Course</button>
+        <div class="imageContainer">
+        <div id="imageContainer">
+            <table id="timetable">
+                <tr>
+                    <th>Course Code</th>
+                    <th>Day</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Session</th>
+                </tr>
+            </table>
+            <div id="footer">Developed by GM</div> 
+        </div>
+    </div>
+        
+        <button id="save-btn" onclick="saveAsPNG()">Save as PNG</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
