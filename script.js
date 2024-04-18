@@ -530,6 +530,7 @@ function addCourse() {
             const cell4 = row.insertCell(3);
             const cell5 = row.insertCell(4);
             cell1.textContent = courseCode;
+            cell1.className = 'courseCode';
             cell2.textContent = courses[courseCode].Day;
             cell3.textContent = courses[courseCode].Date;
             cell4.textContent = detail.Time;
@@ -558,13 +559,43 @@ function toggleDropdown(id) {
     }
 }
 
+// Toggle the sidebar visibility
 function toggleSidebar() {
     var sidebar = document.querySelector('.sidebar');
+    var menuBtn = document.getElementById('sidebar-toggle');
+    
+    // Check the current position and toggle accordingly
     if (sidebar.style.left === '0px') {
         sidebar.style.left = '-300px'; // Hide sidebar
-        // sidebar.style.display = 'none';
+        menuBtn.textContent = 'Open Side Bar';
     } else {
-        sidebar.style.left = '0'; // Show sidebar
-        // sidebar.style.display = 'block';
+        sidebar.style.left = '0px'; // Show sidebar
+        menuBtn.textContent = 'Close Side Bar';
     }
 }
+
+// Close the sidebar if the click was outside
+document.addEventListener('click', function(event) {
+    var sidebar = document.querySelector('.sidebar');
+    var menuBtn = document.getElementById('sidebar-toggle');
+
+    // Check if the clicked area is not the sidebar and not the toggle button
+    if (!sidebar.contains(event.target) && !menuBtn.contains(event.target) && sidebar.style.left === '0px') {
+        sidebar.style.left = '-300px';
+        menuBtn.textContent = 'Open Side Bar';
+    }
+});
+
+// Prevent closing sidebar when clicking inside
+sidebar.addEventListener('click', function(event) {
+    event.stopPropagation();
+});
+
+// Special handling to stop propagation on the menu button
+menuBtn.addEventListener('click', function(event) {
+    event.stopPropagation(); // Stop the click from propagating to the document
+    toggleSidebar(); // Toggle the sidebar
+});
+
+
+

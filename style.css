@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    padding-top: 50px; /* Ensure there's room for the menu button on small screens */
+    padding-top: 50px;
 }
 
 #sidebar-toggle {
@@ -131,6 +131,14 @@ button:hover {
 @media (max-width: 768px) {
     #sidebar-toggle {
         display: block;
+        
+    }
+    .btn
+    {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+
     }
 
     .sidebar {
@@ -143,6 +151,10 @@ button:hover {
         padding: 10px; /* Slightly reduce padding for space efficiency */
         margin: 0; /* Remove margin to use the full width of the screen */
         box-shadow: none; /* Optional: reduce shadow effects on small screens */
+    }
+    .courseCode
+    {
+        display: none;
     }
 }
 
